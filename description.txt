@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:wght@300;400;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Page Styling & Background */
+body.desc-body {
+    background-color: #0d1b1e;
+    background-image: linear-gradient(rgba(13, 27, 30, 0.7), rgba(13, 27, 30, 0.7)), url('images/startscreen1.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    
+    color: #e8f5e9;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+    overflow-y: auto;
+    min-height: 100vh;
+}
+
+/* Custom Emerald Scrollbar */
+body::-webkit-scrollbar {
+    width: 12px;
+}
+body::-webkit-scrollbar-thumb {
+    background: #5c9e46;
+    border-radius: 6px;
+    border: 2px solid #1c3619;
+}
+body::-webkit-scrollbar-track {
+    background: #0a140c;
+}
+
+/* Wide Container taking full advantage of side spaces */
+.desc-container {
+    position: relative;
+    z-index: 10;
+    width: 92%;
+    max-width: 1400px; /* Increased width to prevent tight side margins */
+    margin: 0 auto;
+    padding: 40px 20px 80px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+}
+
+/* Back Button */
+.back-btn {
+    align-self: flex-start;
+    background: rgba(92, 158, 70, 0.25);
+    border: 1px solid rgba(136, 192, 112, 0.5);
+    color: #e8f5e9;
+    padding: 10px 22px;
+    border-radius: 8px;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.75rem;
+    text-decoration: none;
+    backdrop-filter: blur(8px);
+    transition: all 0.2s ease;
+}
+
+.back-btn:hover {
+    background: rgba(136, 192, 112, 0.45);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(136, 192, 112, 0.3);
+}
+
+/* Title Header */
+.desc-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #ffffff;
+    text-align: center;
+    margin: 10px 0 15px 0;
+    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.8), 0 0 15px rgba(136, 192, 112, 0.3);
+}
+
+/* Universal Light-Green Transparent Glass Cards */
+.desc-card {
+    background: rgba(36, 68, 42, 0.45); /* Light translucent emerald green */
+    border: 1px solid rgba(136, 192, 112, 0.35);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-radius: 14px;
+    padding: 24px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+/* Text Typography */
+.text-card p, .full-width-card p {
+    color: #d1e7dd;
+    font-size: 1.05rem;
+    line-height: 1.6;
+}
+
+.full-width-card h3 {
+    color: #ffffff;
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+/* Rows & Layouts */
+.desc-row {
+    display: flex;
+    gap: 24px;
+    width: 100%;
+    align-items: stretch;
+}
+
+.desc-row .desc-card {
+    flex: 1;
+}
+
+/* Image Cards */
+.image-card {
+    padding: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 220px;
+}
+
+.card-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 14px;
+}
+
+/* Full Width & Centered Small Text Box */
+.full-width-card {
+    width: 100%;
+}
+
+.small-text-box {
+    text-align: center;
+    padding: 18px 28px;
+}
+
+/* Two Columns with Top Img / Bottom Text Cards */
+.desc-row.two-columns {
+    display: flex;
+    gap: 24px;
+}
+
+.stacked-card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Centered Stacked Card */
+.desc-centered-stack {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.desc-centered-stack .stacked-card {
+    max-width: 700px;
+    width: 100%;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+    .desc-row, .desc-row.two-columns {
+        flex-direction: column;
+    }
+    
+    .desc-title {
+        font-size: 1.6rem;
+    }
+}
